@@ -6,7 +6,6 @@ import { useTask } from "../../providers/task";
 const ListTasks = () => {
   const { tasks, getTasks } = useTask();
 
-  console.log(tasks);
   return (
     <div>
       {tasks.map((task) => (
