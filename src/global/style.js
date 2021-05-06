@@ -14,13 +14,13 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
-    background-color: ${COLORS.primary};
+    /* background-color: ${COLORS.primary}; */
     
   }
   div{
     box-sizing: border-box;
   }
   h1,p,h2,h3,h4,li{
-    color: ${COLORS.default};
+    /* color: ${COLORS.default}; */
   }
 `;

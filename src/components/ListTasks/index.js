@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CardTask from "../CardTask";
 import api from "../../services";
+import { useTask } from "../../providers/task";
 
 const ListTasks = () => {
-  const [tasks, setTasks] = useState([]);
-  const getTasks = async () => {
-    await api.get("/tarefas").then((resp) => setTasks(resp.data));
-  };
+  const { tasks, getTasks } = useTask();
 
-  useEffect(() => {
-    getTasks();
-  }, []);
-
+  console.log(tasks);
   return (
     <div>
       {tasks.map((task) => (
