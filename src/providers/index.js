@@ -1,11 +1,9 @@
-import React from "react";
-import { useTask } from "./task";
-// import { Container } from './styles';
+import { TaskProvider } from "./task";
 
 const Providers = ({ children }) => {
   return (
     <>
-      <useTask>{children}</useTask>
+      <TaskProvider>{children}</TaskProvider>
     </>
   );
 };

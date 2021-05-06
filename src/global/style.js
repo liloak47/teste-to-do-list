@@ -20,4 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   div{
     box-sizing: border-box;
   }
+  h1,p,h2,h3,h4,li{
+    color: ${COLORS.default};
+  }
 `;
