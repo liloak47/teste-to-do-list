@@ -13,6 +13,8 @@ export const TaskProvider = ({ children }) => {
   useEffect(() => {
     getTasks();
   }, [tasks]);
+
+  console.log(tasks);
   return (
     <TaskContext.Provider value={{ tasks, setTasks, getTasks }}>
       {children}
