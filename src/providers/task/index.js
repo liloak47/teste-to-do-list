@@ -10,10 +10,6 @@ export const TaskProvider = ({ children }) => {
     await api.get("/tarefas").then((resp) => setTasks(resp.data));
   };
 
-  useEffect(() => {
-    getTasks();
-  }, [tasks]);
-
   console.log(tasks);
   return (
     <TaskContext.Provider value={{ tasks, setTasks, getTasks }}>

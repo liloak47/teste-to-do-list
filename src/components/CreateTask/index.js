@@ -4,6 +4,7 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import api from "../../services";
+import { useTask } from "../../providers/task";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -22,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CreateTask() {
   const [titulo, setTitulo] = useState("");
   const [descricao, setDescricao] = useState("");
+  const { getTasks } = useTask();
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);

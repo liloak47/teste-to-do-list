@@ -61,7 +61,7 @@ export default function EditTaks({ task }) {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Alterar Tarefa</h2>
-            <h3>Alterar o Título</h3>
+            <h3>Alterar o Títulss</h3>
             <input
               type="text"
               value={titulo}
