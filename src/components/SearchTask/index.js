@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import api from "../../services";
 import { useTask } from "../../providers/task";
 const SearchTask = () => {
   const [typedText, setTypedText] = useState("");

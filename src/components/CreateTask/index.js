@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import api from "../../services";
 import { useTask } from "../../providers/task";
+import { Button } from "../Button/styles";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -21,9 +22,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateTask() {
-  const [titulo, setTitulo] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const { getTasks } = useTask();
+  const {
+    getTasks,
+    createTask,
+    titulo,
+    descricao,
+    setTitulo,
+    setDescricao,
+  } = useTask();
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -36,21 +42,11 @@ export default function CreateTask() {
     setOpen(false);
   };
 
-  const createTask = () => {
-    api
-      .post("/tarefas", {
-        titulo: titulo,
-        descricao: descricao,
-      })
-      .then((resp) => console.log(resp));
-    setOpen(false);
-  };
-
   return (
     <div>
-      <button type="button" onClick={handleOpen}>
-        react-transition-group
-      </button>
+      <Button type="button" onClick={handleOpen}>
+        New Task
+      </Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"

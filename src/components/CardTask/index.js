@@ -1,7 +1,6 @@
 import React from "react";
 import EditTask from "../EditTask";
 import { Card } from "./styles";
-
 const CardTask = ({ task }) => {
   return (
     <Card>

@@ -16,6 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     background-color: ${COLORS.primary};
+
+    
     
   }
   div{

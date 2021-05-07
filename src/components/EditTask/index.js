@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import api from "../../services/index";
+import { useTask } from "../../providers/task";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -20,8 +20,13 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function EditTaks({ task }) {
-  const [titulo, setTitulo] = useState(task.titulo);
-  const [descricao, setDescricao] = useState(task.descricao);
+  const {
+    editDescricao,
+    setEditTitulo,
+    setEditDescricao,
+    editTasks,
+    editTitulo,
+  } = useTask();
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -33,14 +38,7 @@ export default function EditTaks({ task }) {
   const handleClose = () => {
     setOpen(false);
   };
-
-  const editTaks = () => {
-    api
-      .patch(`/tarefas/${task.id}`, { titulo: titulo, descricao: descricao })
-      .then((resp) => console.log(resp));
-    setOpen(false);
-  };
-
+  console.log(task.id);
   return (
     <div>
       <button type="button" onClick={handleOpen}>
@@ -64,16 +62,16 @@ export default function EditTaks({ task }) {
             <h3>Alterar o Títulss</h3>
             <input
               type="text"
-              value={titulo}
-              onChange={(e) => setTitulo(e.target.value)}
+              value={editTitulo}
+              onChange={(e) => setEditTitulo(e.target.value)}
             />
             <h3>Alterar a descrição</h3>
             <input
               type="text"
-              value={descricao}
-              onChange={(e) => setDescricao(e.target.value)}
+              value={editDescricao}
+              onChange={(e) => setEditDescricao(e.target.value)}
             />
-            <button onClick={editTaks}>mude aq</button>
+            <button onClick={() => editTasks(task.id)}>mude aq</button>
           </div>
         </Fade>
       </Modal>
