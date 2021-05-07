@@ -3,8 +3,7 @@ import ListTasks from "../../components/ListTasks";
 import SearchTask from "../../components/SearchTask";
 import Create from "../../components/CreateTask";
 import { useTask } from "../../providers/task";
-
-// import { Container } from './styles';
+import "./style.scss";
 
 const Home = () => {
   const { tasks, getTasks } = useTask();
@@ -14,9 +13,13 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Create />
-      <SearchTask />
-      <ListTasks tasks={tasks} />
+      <section className="box-main">
+        <div className="group-one">
+          <SearchTask />
+          <Create />
+        </div>
+        <ListTasks tasks={tasks} />
+      </section>
     </div>
   );
 };

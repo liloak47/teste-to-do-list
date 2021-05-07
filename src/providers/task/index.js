@@ -7,14 +7,11 @@ export const TaskProvider = ({ children }) => {
   const [titulo, setTitulo] = useState("");
   const [editTitulo, setEditTitulo] = useState("");
   const [editDescricao, setEditDescricao] = useState("");
-
   const [descricao, setDescricao] = useState("");
-
   const [tasks, setTasks] = useState([]);
 
   const getTasks = () => {
     api.get("/tarefas").then((resp) => setTasks(resp.data));
-    console.log(tasks);
   };
 
   const createTask = () => {
@@ -30,6 +27,11 @@ export const TaskProvider = ({ children }) => {
     api
       .patch(`/tarefas/${id}`, { titulo: editTitulo, descricao: editDescricao })
       .then(() => getTasks());
+  };
+
+  const deleteTask = (id) => {
+    console.log(id);
+    api.delete(`/tarefas/${id}`).then(() => getTasks());
   };
 
   return (
@@ -48,6 +50,8 @@ export const TaskProvider = ({ children }) => {
         setEditDescricao,
         editTitulo,
         editDescricao,
+        deleteTask,
+        editTasks,
       }}
     >
       {children}

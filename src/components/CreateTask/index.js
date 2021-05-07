@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import api from "../../services";
 import { useTask } from "../../providers/task";
 import { Button } from "../Button/styles";
 
@@ -22,14 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function CreateTask() {
-  const {
-    getTasks,
-    createTask,
-    titulo,
-    descricao,
-    setTitulo,
-    setDescricao,
-  } = useTask();
+  const { createTask, titulo, descricao, setTitulo, setDescricao } = useTask();
 
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
@@ -41,7 +33,10 @@ export default function CreateTask() {
   const handleClose = () => {
     setOpen(false);
   };
-
+  const handleClick = () => {
+    createTask();
+    handleClose();
+  };
   return (
     <div>
       <Button type="button" onClick={handleOpen}>
@@ -74,7 +69,7 @@ export default function CreateTask() {
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
             />
-            <button onClick={createTask}>create!</button>
+            <button onClick={handleClick}>create!</button>
           </div>
         </Fade>
       </Modal>

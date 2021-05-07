@@ -6,7 +6,6 @@ export const List = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 400px;
-  border: 1px solid ${COLORS.card};
   border-radius: 16px;
+  margin-top: 50px;
 `;

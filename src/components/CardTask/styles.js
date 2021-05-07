@@ -10,4 +10,13 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: center;
   margin: 20px;
+  padding: 10px;
+  position: relative;
+  .done {
+    color: ${COLORS.third};
+  }
+  .close {
+    position: absolute;
+    right: 2px;
+  }
 `;

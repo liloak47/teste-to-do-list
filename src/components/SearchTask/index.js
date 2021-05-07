@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useTask } from "../../providers/task";
+import { BsSearch } from "react-icons/bs";
 const SearchTask = () => {
   const [typedText, setTypedText] = useState("");
   const [tasksFiltered, setTasksFiltered] = useState([]);
@@ -23,12 +24,14 @@ const SearchTask = () => {
     verifyInput();
   }, [typedText]);
   return (
-    <div>
+    <div className="box-src">
       <input
         type="text"
         value={typedText}
         onChange={(e) => setTypedText(e.target.value)}
+        placeholder="Procure uma Tarefa"
       />
+      <BsSearch />
     </div>
   );
 };

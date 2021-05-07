@@ -8,7 +8,7 @@ export const Button = styled.button`
   border-radius: 8px;
   color: ${COLORS.default};
   cursor: pointer;
-
+  width: 100%;
   :hover {
     filter: brightness(0.9);
     transition: 1s;
