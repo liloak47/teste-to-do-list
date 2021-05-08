@@ -3,8 +3,7 @@ import { useTask } from "../../providers/task";
 import { BsSearch } from "react-icons/bs";
 const SearchTask = () => {
   const [typedText, setTypedText] = useState("");
-  const [tasksFiltered, setTasksFiltered] = useState([]);
-  const { tasks, setTasks, getTasks } = useTask();
+  const { tasks, getTasks, setTasksFiltered } = useTask();
 
   const filteredTasks = () => {
     setTasksFiltered(
@@ -12,17 +11,20 @@ const SearchTask = () => {
         task.titulo?.toLowerCase().includes(typedText?.toLocaleLowerCase())
       )
     );
-    setTasks(tasksFiltered);
   };
+
   const verifyInput = () => {
     if (typedText === "") {
       getTasks();
     }
   };
+
   useEffect(() => {
     filteredTasks();
+    getTasks();
     verifyInput();
   }, [typedText]);
+
   return (
     <div className="box-src">
       <input

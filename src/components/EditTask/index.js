@@ -5,22 +5,21 @@ import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 import { useTask } from "../../providers/task";
 import { Button } from "../../components/Button/styles";
-import { MdEdit } from "react-icons/md";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    flexDirection: "collum",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#262529",
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     display: theme.flex,
     flexDirection: theme.collum,
+    background: "#262529",
   },
 }));
 
@@ -48,7 +47,6 @@ export default function EditTaks({ task }) {
     editTasks(id);
     handleClose();
   };
-  console.log(task.id);
   return (
     <div>
       <Button type="button" onClick={handleOpen}>
@@ -81,7 +79,9 @@ export default function EditTaks({ task }) {
               value={editDescricao}
               onChange={(e) => setEditDescricao(e.target.value)}
             />
-            <Button onClick={() => handleClick(task.id)}>mude aq</Button>
+            <div style={{ margin: "20px" }}>
+              <Button onClick={() => handleClick(task.id)}>mude aq</Button>
+            </div>
           </div>
         </Fade>
       </Modal>

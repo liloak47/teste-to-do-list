@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: "#262529",
     border: "2px solid #000",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
@@ -37,6 +37,7 @@ export default function CreateTask() {
     createTask();
     handleClose();
   };
+
   return (
     <div>
       <Button type="button" onClick={handleOpen}>
@@ -69,7 +70,9 @@ export default function CreateTask() {
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
             />
-            <button onClick={handleClick}>create!</button>
+            <div style={{ margin: "20px" }}>
+              <Button onClick={handleClick}>create!</Button>
+            </div>
           </div>
         </Fade>
       </Modal>

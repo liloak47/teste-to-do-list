@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import ListTasks from "../../components/ListTasks";
+import FiltersTasks from "../../components/FiltersTasks";
 import SearchTask from "../../components/SearchTask";
 import Create from "../../components/CreateTask";
 import { useTask } from "../../providers/task";
 import { BoxMain, Title } from "./style";
 
 const Home = () => {
-  const { tasks, getTasks } = useTask();
-
+  const { tasks, getTasks, tasksFiltered } = useTask();
   useEffect(() => {
     getTasks();
   }, []);
+  console.log(tasksFiltered);
   return (
     <BoxMain>
       <Title>
@@ -26,7 +27,7 @@ const Home = () => {
       <div className="group-one">
         <SearchTask />
       </div>
-      <ListTasks tasks={tasks} />
+      {!tasksFiltered.length ? <ListTasks tasks={tasks} /> : <FiltersTasks />}
     </BoxMain>
   );
 };

@@ -33,7 +33,6 @@ export const GlobalStyle = createGlobalStyle`
 
   .box-src{
     position: relative;
-
     input{
     width: 400px;
     background-color : ${COLORS.card};
