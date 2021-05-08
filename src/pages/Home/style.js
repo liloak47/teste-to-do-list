@@ -5,6 +5,7 @@ export const BoxMain = styled.div`
   margin: 0 400px;
   border-radius: 16px;
   padding: 40px 100px;
+
   .group-one {
     display: flex;
     width: 100%;
@@ -32,8 +33,26 @@ export const BoxMain = styled.div`
     padding: 0;
     margin-top: 50px;
   }
+  @media only screen and (max-width: 768px) {
+    padding: 20px 20px;
+    margin: 0;
+
+    .box-create {
+      p {
+        line-height: 20px;
+      }
+      button {
+        font-size: 18px;
+        padding: 30px 60px;
+      }
+    }
+  }
 `;
+
 export const Title = styled.h1`
+  @media only screen and (max-width: 768px) {
+    font-size: 40px;
+  }
   margin: 0;
   font-size: 60px;
   b {

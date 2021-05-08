@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     background-color: ${COLORS.primary};
+    width: 100%100vh;
   }
   svg{
     box-sizing: border-box;
@@ -67,6 +68,13 @@ export const GlobalStyle = createGlobalStyle`
       :hover{
         color: ${COLORS.third};
         transition: 0.5s;
+      }
+    }
+  }
+  @media only screen and (max-width: 768px) {
+    .box-src{
+      input{
+        width: 250px;
       }
     }
   }

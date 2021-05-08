@@ -41,7 +41,7 @@ export default function CreateTask() {
   return (
     <div>
       <Button type="button" onClick={handleOpen}>
-        New Task
+        Nova Tarefa
       </Button>
       <Modal
         aria-labelledby="transition-modal-title"
