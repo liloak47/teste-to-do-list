@@ -21,9 +21,8 @@ export const TaskProvider = ({ children }) => {
         titulo: titulo,
         descricao: descricao,
       })
-      .then(() => getTasks());
+      .then(() => getTasks(), setTitulo(""), setDescricao(""));
   };
-
   const editTasks = (id) => {
     api
       .patch(`/tarefas/${id}`, {
@@ -54,7 +53,6 @@ export const TaskProvider = ({ children }) => {
         editTitulo,
         editDescricao,
         deleteTask,
-        editTasks,
         tasksFiltered,
         setTasksFiltered,
       }}

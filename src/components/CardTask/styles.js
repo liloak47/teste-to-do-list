@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../global/style";
+
 export const Card = styled.div`
   background-color: ${COLORS.card};
   width: 100%;

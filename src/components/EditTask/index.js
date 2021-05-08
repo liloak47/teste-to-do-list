@@ -47,6 +47,7 @@ export default function EditTaks({ task }) {
     editTasks(id);
     handleClose();
   };
+
   return (
     <div>
       <Button type="button" onClick={handleOpen}>

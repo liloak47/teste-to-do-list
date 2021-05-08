@@ -4,7 +4,7 @@ import { useTask } from "../../providers/task";
 import { List } from "./styles";
 
 const ListTasks = () => {
-  const { tasks, getTasks, tasksFiltered } = useTask();
+  const { tasks, getTasks } = useTask();
 
   useEffect(() => {
     getTasks();

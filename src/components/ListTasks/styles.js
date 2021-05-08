@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { COLORS } from "../../global/style";
 
 export const List = styled.div`
   display: flex;

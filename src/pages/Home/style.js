@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { COLORS } from "../../global/style";
+
 export const BoxMain = styled.div`
   border: 1px solid #262529;
   margin: 0 400px;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTask } from "../../providers/task";
 import { BsSearch } from "react-icons/bs";
+
 const SearchTask = () => {
   const [typedText, setTypedText] = useState("");
   const { tasks, getTasks, setTasksFiltered } = useTask();

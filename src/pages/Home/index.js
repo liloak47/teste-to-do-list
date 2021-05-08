@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ListTasks from "../../components/ListTasks";
 import FiltersTasks from "../../components/FiltersTasks";
 import SearchTask from "../../components/SearchTask";
@@ -8,10 +8,11 @@ import { BoxMain, Title } from "./style";
 
 const Home = () => {
   const { tasks, getTasks, tasksFiltered } = useTask();
+
   useEffect(() => {
     getTasks();
   }, []);
-  console.log(tasksFiltered);
+
   return (
     <BoxMain>
       <Title>
