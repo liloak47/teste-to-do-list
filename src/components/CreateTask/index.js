@@ -57,18 +57,22 @@ export default function CreateTask() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">Alterar Tarefa</h2>
+            <h2 id="transition-modal-title"> Criar nova Tarefa</h2>
             <h3>Título</h3>
             <input
               type="text"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
+              className="inp-modal"
+              placeholder="digite aqui"
             />
             <h3>Descrição</h3>
-            <input
+            <textarea
               type="text"
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
+              className="inp-modal"
+              placeholder="digite aqui"
             />
             <div style={{ margin: "20px" }}>
               <Button onClick={handleClick}>create!</Button>

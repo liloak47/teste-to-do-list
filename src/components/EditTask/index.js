@@ -67,20 +67,24 @@ export default function EditTaks({ task }) {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">Alterar Tarefa</h2>
-            <h3>Alterar o Títulss</h3>
+            <h3>Alterar o Título</h3>
             <input
               type="text"
               value={editTitulo}
               onChange={(e) => setEditTitulo(e.target.value)}
+              className="inp-modal"
+              placeholder="digite aqui"
             />
             <h3>Alterar a descrição</h3>
-            <input
+            <textarea
               type="text"
               value={editDescricao}
               onChange={(e) => setEditDescricao(e.target.value)}
+              className="inp-modal"
+              placeholder="digite aqui"
             />
             <div style={{ margin: "20px" }}>
-              <Button onClick={() => handleClick(task.id)}>mude aq</Button>
+              <Button onClick={() => handleClick(task.id)}>salvar</Button>
             </div>
           </div>
         </Fade>

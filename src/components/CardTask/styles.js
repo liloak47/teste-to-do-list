@@ -12,6 +12,26 @@ export const Card = styled.div`
   margin: 20px;
   padding: 10px;
   position: relative;
+  h1 {
+    text-align: center;
+  }
+  .id-task {
+    position: absolute;
+    top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 13px;
+    p {
+      border: 1px solid ${COLORS.third};
+      border-radius: 50%;
+      padding: 5px;
+      height: 10px;
+      width: 10px;
+      color: ${COLORS.third};
+      font-size: 10px;
+    }
+  }
   .done {
     color: ${COLORS.third};
   }

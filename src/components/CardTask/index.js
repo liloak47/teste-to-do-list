@@ -6,10 +6,12 @@ import DeletTask from "../DeleteTask";
 const CardTask = ({ task }) => {
   return (
     <Card>
+      <div className="id-task">
+        <p>{task.id}</p>
+        <MdDone className="done" />
+      </div>
       <DeletTask id={task.id} className="close" />
-      <h1>
-        {task.titulo} <MdDone className="done" />
-      </h1>
+      <h2>{task.titulo}</h2>
       <p>{task.descricao}</p>
       <EditTask task={task} />
     </Card>

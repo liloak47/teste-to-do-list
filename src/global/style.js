@@ -17,9 +17,6 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     font-family: Open-Sans, Helvetica, Sans-Serif;
     background-color: ${COLORS.primary};
-
-    
-    
   }
   svg{
     box-sizing: border-box;
@@ -30,7 +27,14 @@ export const GlobalStyle = createGlobalStyle`
   h1,p,h2,h3,h4,li{
     color: ${COLORS.default};
   }
-
+  .inp-modal{
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+  }
+  textarea{
+    font-family: Open-Sans, Helvetica, Sans-Serif;
+  }
   .box-src{
     position: relative;
     input{
@@ -49,6 +53,8 @@ export const GlobalStyle = createGlobalStyle`
       top: 12px;
       font-size: 24px;
     }
+  }
+  button{
   }
   .svg-box{
     cursor: pointer;
